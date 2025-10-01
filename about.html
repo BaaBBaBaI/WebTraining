@@ -8,24 +8,26 @@
 <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 <title>О нас - Название вашего сайта</title>
 <meta name="description" content="Узнайте больше о нашей компании и истории">
+    <link rel="stylesheet" href="pr2.css">
 </head>
 <body>
-<header>
-<nav>
-<ul>
-<li><a href="index.html">Главная</a></li>
-<li><a href="about.html">О нас</a></li>
-<li><a href="contacts.html">Контакты</a></li>
-</ul>
-</nav>
 <!-- Скопируйте весь блок <header> из index.html -->
-</header>
+
+    <header class="site-header">
+        <a class="site-header__brand" href="/">Лого</a>
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <ol class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="index.html">Главная</a>
+                <li class="breadcrumbs__item" aria-current="page">
+                    <span class="breadcrumbs__current">О нас</span>
+                </li>
+            </ol>
+        </nav>
+    </header>
+
 <main>
 <!-- Простые "хлебные крошки" -->
-<nav aria-label="Хлебные крошки">
-<a href="index.html">Главная</a> →
-<span>О нас</span>
-</nav>
 <h1>О нашей компании</h1>
 <section>
 <h2>Наша история</h2>

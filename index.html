@@ -7,66 +7,91 @@
 <title>Главная - Крутой сайн</title>
 <meta name="description" content="Сайт Проекта">
 <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="pr2.css">
+    <link rel="stylesheet" href="pr2.css">
     <script src="pr2.js" defer></script>
 </head>
 <body>
 <!-- Шапка фвыасайта -->
-<header>
-<a href="/">Крутой сайт</a>
-<!-- Главное меню навигации -->
-<nav>
-<ul>
-<li><a href="index.html">Главная</a></li>
-<li><a href="about.html">О нас</a></li>
-<li><a href="contacts.html">Контакты</a></li>
-</ul>
-</nav>
-</header>
+    <header class="site-header">
+        <a class="site-header__brand" href="/">БЕБЕБЕ</a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link"
+                                              href="index.html">Главная</a></li>
+                <li class="site-nav__item"><a class="site-nav__link"
+                                              href="about.html">О нас</a></li>
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--
+cta" href="#contacts">Связаться</a></li>
+            </ul>
+        </nav>
+    </header>
+
 <!-- Уникальное основное содержимое страницы -->
 <main>
 <h1>Добро пожаловать на мой сайт!</h1>
 <!-- Секция 1 с якорем -->
 <section id="services">
-<h2>мои услуги</h2>
+<h2>Мои услуги</h2>
 <p>Описание предоставляемых услуг...</p>
 <ul>
     <li> Написать страницу сайта.</li>
     <li> Оформить страницу сайта.</li>
     <li> Понять страницу сайта.</li>
 </ul>
-<li><a href="#contacts">Связаться с нами</a></li>
-<li> <button id="openDialog" type="button">Написать нам</button> </li> 
-<dialog id="contactDialog" aria-labelledby="dialogTitle">
-<h2 id="dialogTitle">Обратная связь</h2>
-<form id="contactForm" method="dialog" novalidate>
-<label for="name">Имя</label>
-<input id="name" name="name" type="text" required minlength="2"
-autocomplete="given-name">
-<label for="email">E-mail</label>
-<input id="email" name="email" type="email" required
-autocomplete="email">
-<label for="phone">Телефон</label>
-<input id="phone" name="phone" type="tel" inputmode="tel"
-autocomplete="tel"
-aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__">
-<small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
-<label for="date">Дата</label>
-<input id="date" name="date" type="date">
-<label for="topic">Тема</label>
-<select id="topic" name="topic" required>
-<option value="">Выберите тему</option>
-<option>Вопрос</option>
-<option>Заказ</option>
-</select>
-<label for="message">Сообщение</label>
-<textarea id="message" name="message" rows="4" required></textarea>
-<div class="form-actions">
-<button type="button" id="closeDialog">Закрыть</button>
-<button type="submit">Отправить</button>
-</div>
-</form>
-</dialog>
+<h2>Связаться с нами!</h2>
+<li> <button id="openDialog" type="button">Написать нам</button> </li>
+    <dialog id="contactDialog" aria-labelledby="dialogTitle">
+        <div class="modal">
+            <h2 id="dialogTitle">Обратная связь</h2>
+
+            <form id="contactForm" class="form" method="dialog" novalidate>
+                <div>
+                    <label for="name">Имя</label>
+                    <input id="name" name="name" type="text" required minlength="2"
+                           autocomplete="given-name" placeholder="Введите ваше имя">
+                </div>
+
+                <div>
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" required
+                           autocomplete="email" placeholder="example@mail.com">
+                </div>
+
+                <div>
+                    <label for="phone">Телефон</label>
+                    <input id="phone" name="phone" type="tel" inputmode="tel"
+                           autocomplete="tel" aria-describedby="phoneHelp"
+                           placeholder="+7 (___) ___-__-__">
+                    <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+                </div>
+
+                <div>
+                    <label for="date">Дата</label>
+                    <input id="date" name="date" type="date">
+                </div>
+
+                <div>
+                    <label for="topic">Тема</label>
+                    <select id="topic" name="topic" required>
+                        <option value="">Выберите тему</option>
+                        <option value="question">Вопрос</option>
+                        <option value="order">Заказ</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" rows="4" required
+                              placeholder="Введите ваше сообщение..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="closeDialog">Закрыть</button>
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
 </section>
 <!-- Секция 2 с якорем -->
 <section id="portfolio">
