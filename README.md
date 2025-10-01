@@ -3,4 +3,4 @@
 ## Проект
 Этот репозиторий является каркасом для будущего веб-приложения.
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://baabbabai.github.io/testgit/)
+- [Публичная страница на GitHub Pages]([https://baabbabai.github.io/testgit/](https://baabbabai.github.io/WebTraining/))
