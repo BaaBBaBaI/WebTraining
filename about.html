@@ -14,6 +14,8 @@
 <!-- Скопируйте весь блок <header> из index.html -->
 
     <header class="site-header">
+        <button class="theme-toggle" type="button" aria-pressed="false"> Тёмная тема
+        </button>
         <a class="site-header__brand" href="/">Лого</a>
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <ol class="breadcrumbs__list">
@@ -28,6 +30,7 @@
 
 <main>
 <!-- Простые "хлебные крошки" -->
+
 <h1>О нашей компании</h1>
 <section>
 <h2>Наша история</h2>
@@ -37,6 +40,19 @@
 <h2>Наша команда</h2>
 <p>Текст о команде...</p>
 </section>
+    <section id="portfolio">
+        <h2>Наши работы</h2>
+        <!-- Видео с YouTube -->
+        <div class="media">
+            <iframe src="https://www.youtube.com/embed/5ouVWbW7SsM?si=veGyo4vnOto7YiUj"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    loading="lazy">
+            </iframe>
+        </div>
+    </section>
 </main>
 <footer>
 <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
