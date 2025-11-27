@@ -217,6 +217,7 @@ section:target {
     padding: var(--space-2, 8px) var(--space-3, 16px);
     text-decoration: none;
     color: var(--color-fg, #054381);
+    background-color: rgba(10, 132, 255, 0.1);
     font-weight: 500;
     border-radius: var(--radius, 8px);
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -225,7 +226,7 @@ section:target {
 .referral:hover {
     color: var(--color-primary);
     text-decoration: ButtonBorder;
-    background-color: rgba(10, 132, 255, 0.1);
+    background-color: rgba(10, 132, 255, 0.5);
 }
 
 .site-nav__link {
