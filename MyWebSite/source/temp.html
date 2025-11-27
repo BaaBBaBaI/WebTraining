@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Glossy Nav</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        /* --- Navigation Bar Styling --- */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-bar {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 8px; /* Rounded corners for the whole bar */
+            overflow: hidden;   /* Clips the children to the rounded corners */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Drop shadow behind the bar */
+            background-color: #33a338; /* Fallback color */
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Text shadow for readability */
+            cursor: pointer;
+
+            /* The Glossy Green Gradient */
+            background: linear-gradient(to bottom, #6ce972 0%, #3cb64b 50%, #299a36 51%, #299a36 100%);
+
+            /* Separator line between items */
+            border-right: 1px solid #227d2a;
+            box-shadow: inset 1px 0 0 rgba(255,255,255,0.2); /* Inner highlight for 3D separator effect */
+
+            transition: all 0.2s ease;
+        }
+
+        /* Remove border from the last item */
+        .nav-item:last-child .nav-link {
+            border-right: none;
+            box-shadow: none;
+        }
+
+        /* Hover State - Slightly brighter */
+        .nav-link:hover {
+            background: linear-gradient(to bottom, #7ef384 0%, #4bc85a 50%, #33a338 51%, #33a338 100%);
+        }
+
+        /* Active State - "Pressed" look */
+        .nav-link.active {
+            background: #25862e; /* Darker solid color or inverted gradient */
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.4); /* Inner shadow to look pressed */
+        }
+
+        /* --- Content Styling --- */
+        .content-section {
+            display: none; /* Hidden by default */
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        /* Show the active content */
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Menu -->
+<div class="nav-container">
+    <ul class="nav-bar">
+        <li class="nav-item">
+            <a class="nav-link active" onclick="showTab('home', this)">Главная</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick="showTab('projects', this)">Проекты</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick="showTab('diary', this)">Дневник</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick="showTab('contacts', this)">Контакты</a>
+        </li>
+    </ul>
+</div>
+
+<!-- Content Sections -->
+<div id="home" class="content-section active">
+    <h2>Добро пожаловать</h2>
+    <p>Это главная страница. Здесь находится вводная информация о вашем сайте.</p>
+</div>
+
+<div id="projects" class="content-section">
+    <h2>Мои Проекты</h2>
+    <p>Здесь будет список ваших текущих проектов и разработок.</p>
+    <ul>
+        <li>Проект A: Разработка UI</li>
+        <li>Проект B: База данных</li>
+    </ul>
+</div>
+
+<div id="diary" class="content-section">
+    <h2>Личный Дневник</h2>
+    <p>Заметки, мысли и обновления статуса.</p>
+    <p><em>23 ноября 2025: Сегодня я изучал CSS градиенты...</em></p>
+</div>
+
+<div id="contacts" class="content-section">
+    <h2>Связаться со мной</h2>
+    <p>Email: example@mail.ru</p>
+    <p>Telegram: @username</p>
+</div>
+
+<script>
+    function showTab(tabId, element) {
+        // 1. Hide all content sections
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // 2. Remove 'active' class from all nav links
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // 3. Show the specific clicked section
+        document.getElementById(tabId).classList.add('active');
+
+        // 4. Set the clicked link to active
+        element.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
