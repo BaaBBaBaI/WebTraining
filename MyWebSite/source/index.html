@@ -31,10 +31,7 @@
             font-family: var(--font-stack);
             background-color: #ffffff;
         }
-
-        /* --- Hero Section --- */
         .xp-hero {
-            /* Using min-height ensures content isn't squashed on small screens */
             min-height: 100vh;
             width: 100%;
             display: flex;
@@ -45,7 +42,7 @@
             background: radial-gradient(circle at 20% 20%, #8DA8E7 0%, #5A7EDC 30%, #5a7edc 100%);
         }
 
-        /* --- Top Bar --- */
+
         .bar {
             width: 100%;
             position: relative;
@@ -56,23 +53,23 @@
             background: var(--bar-blue);
             border-top: 1px solid rgba(255,255,255,0.2);
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            flex-shrink: 0; /* Prevent shrinking */
+            flex-shrink: 0;
         }
 
-        /* --- Bottom Bar (Long Fade) --- */
+
         .bar.bottom {
-            /* UPDATED: Much taller height for a long fade */
+
             height: 250px;
 
-            /* UPDATED: Smooth gradient from Bar Blue -> Pure White */
+
             background: linear-gradient(to bottom, var(--bar-blue) 0%, rgba(1, 47, 158, 0.8) 30%, #ffffff 100%);
 
             border-bottom: none;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: none;
-            flex-shrink: 0; /* Prevent shrinking */
+            flex-shrink: 0;
 
-            /* Layout for anything inside, if needed */
+
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -345,10 +342,10 @@
            We will use the framework's default look for consistency. */
         .xp-progress-bar {
             flex-grow: 1;
-            height: 16px; /* Force height to match XP look */
+            height: 16px;
         }
 
-        /* --- Projects Grid --- */
+
         .projects-grid {
             display: flex;
             gap: 15px;
@@ -373,7 +370,7 @@
             background: #e6f0ff;
         }
 
-        /* Footer Text */
+
         .xp-footer-text {
             text-align: center;
             font-size: 11px;
@@ -406,7 +403,7 @@
         .project-card-large:hover {
             border-style: solid;
             border-color: #0054e3;
-            background: #e6f0ff; /* Подсветка при наведении */
+            background: #e6f0ff;
         }
 
         .project-name {
@@ -444,25 +441,33 @@
             margin-bottom: 10px;
         }
 
-        /*MOBILE OPTIMIZATIPON*/
+        @media (max-width: 377px) {
+
+
+            .projects-grid-large {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-bottom: 10px;
+            }
+
+        }
 
         @media (max-width: 768px) {
 
-            /* 1. Fix the Navigation Bar */
             .nav-container {
                 padding: 0 10px;
             }
 
             .nav-bar {
-                flex-direction: column; /* Stack items vertically */
+                flex-direction: column;
                 width: 90%;
             }
 
             .nav-link {
                 text-align: center;
-                padding: 15px 20px; /* Smaller padding */
+                padding: 15px 20px;
                 width: 100%;
-                /* Switch border from right to bottom */
                 border-right: none;
                 border-bottom: 1px solid #c67500;
             }
@@ -471,26 +476,25 @@
                 border-bottom: none;
             }
 
-            /* 2. Fix the Center Panel (Hero Section) */
             .center-panel {
-                flex-direction: column; /* Stack vertical */
+                flex-direction: column;
                 height: auto;
                 padding: 20px;
             }
 
-            /* Left Side (Logo) adjustments */
+
             .left-side {
-                align-items: center; /* Center horizontally */
+                align-items: center;
                 padding-right: 0;
                 text-align: center;
-                flex: 0 0 auto; /* Do not stretch */
+                flex: 0 0 auto;
             }
 
             .logo-icon-border {
-                margin-right: 0; /* Remove side margins */
+                margin-right: 0;
             }
 
-            /* Right Side (Text) adjustments */
+
             .right-side {
                 padding-left: 0;
                 align-items: center;
@@ -499,26 +503,26 @@
             }
 
             .windows-text {
-                font-size: 32px; /* Slightly smaller text for mobile */
+                font-size: 32px;
                 text-align: center;
             }
 
-            /* 3. Rotate the Divider */
+
             .divider {
-                width: 80%; /* Wide horizontal line */
-                height: 2px; /* Thickness */
+                width: 80%;
+                height: 2px;
                 margin: 20px 0;
-                /* Change gradient to flow Left-to-Right instead of Top-to-Bottom */
+
                 background: linear-gradient(to right, transparent 0%, rgba(152, 180, 226, 0.6) 20%, rgb(255, 255, 255) 50%, rgba(152, 180, 226, 0.6) 80%, transparent 100%);
             }
 
-            /* Adjust scroll arrow position */
+
             .scroll-down-option {
                 bottom: 10px;
             }
 
             .terminal-form-container {
-                border: 1px dashed #888; /* Пунктирная рамка как на фото */
+                border: 1px dashed #888;
                 background-color: #fff;
                 padding: 20px;
                 margin-bottom: 15px;
@@ -563,7 +567,7 @@
                 cursor: pointer;
             }
 
-            /* Строка с полем ввода */
+
             .form-row {
                 display: flex;
                 align-items: center;
@@ -571,22 +575,22 @@
             }
 
             .form-label {
-                width: 80px; /* Фиксированная ширина для Имя/Email */
+                width: 80px;
                 flex-shrink: 0;
                 font-weight: bold;
                 color: #333;
             }
 
-            /* Обертка для имитации скобок [ input ] */
+
             .input-bracket-wrapper {
                 display: flex;
                 align-items: center;
                 flex-grow: 1;
-                color: #444; /* Цвет скобок */
+                color: #444;
                 font-weight: bold;
             }
 
-            /* Само поле ввода (прозрачное, только линия снизу) */
+
             .terminal-input {
                 flex-grow: 1;
                 border: none;
@@ -600,10 +604,10 @@
                 padding: 2px 0;
             }
             .terminal-input:focus {
-                border-bottom: 2px solid #0054e3; /* Подсветка при вводе */
+                border-bottom: 2px solid #0054e3;
             }
 
-            /* Для сообщения (textarea) */
+
             .form-column {
                 display: flex;
                 flex-direction: column;
@@ -629,7 +633,7 @@
                 margin: 0 5px;
             }
 
-            /* Кнопка отправки */
+
             .submit-link-container {
                 text-align: center;
                 margin-top: 20px;
@@ -646,7 +650,7 @@
                 border-bottom-style: solid;
             }
 
-            /* Блок информации внизу */
+
             .contact-info-section {
                 font-family: "Courier New", monospace;
                 padding-left: 10px;
@@ -667,29 +671,29 @@
         }
 
         .diary-log-box {
-            border: 1px dashed #666; /* Пунктирная рамка */
+            border: 1px dashed #666;
             padding: 15px;
-            background: #fff; /* Белый фон для читаемости */
+            background: #fff;
             margin-bottom: 20px;
-            font-family: "Courier New", monospace; /* Моноширинный шрифт для стиля "код" */
+            font-family: "Courier New", monospace;
             font-size: 13px;
             box-shadow: inset 1px 1px 4px rgba(0,0,0,0.05);
         }
 
-        /* Строка записи в дневнике */
+
         .diary-row {
             display: flex;
-            justify-content: space-between; /* Раскидываем текст и статус по краям */
+            justify-content: space-between;
             margin-bottom: 8px;
             padding-bottom: 4px;
-            border-bottom: 1px dotted #eee; /* Легкая линия разделителя */
+            border-bottom: 1px dotted #eee;
         }
         .diary-row:last-child {
             border-bottom: none;
             margin-bottom: 0;
         }
 
-        /* Статусы задач */
+
         .status-done {
             color: green;
             font-weight: bold;
@@ -705,7 +709,7 @@
 
 
 
-        /* Заголовки внутри дневника */
+
         .diary-header-title {
             text-align: center;
             font-size: 16px;
@@ -734,9 +738,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Затемнение */
+            background: rgba(0, 0, 0, 0.4);
             z-index: 999;
-            display: none; /* Скрыто по умолчанию */
+            display: none;
             justify-content: center;
             align-items: center;
         }
@@ -751,7 +755,7 @@
             box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
         }
 
-        /* Поля внутри модалки дневника */
+
         .modal-form-row {
             display: flex;
             flex-direction: column;
@@ -767,7 +771,7 @@
             font-family: Tahoma, sans-serif;
         }
 
-        /* Красный текст ошибки для контактов */
+
         .error-message {
             color: red;
             font-size: 11px;
@@ -789,15 +793,15 @@
 </head>
 <body>
 
-<!-- XP Hero Section -->
+
 <div class="xp-hero">
-    <!-- Top Bar -->
+
     <div class="bar top"></div>
 
-    <!-- Main Content -->
+
     <div class="xp-content">
         <div class="center-panel">
-            <!-- Left: Logo -->
+
             <div class="left-side">
                 <div class="logo-icon-border">
                     <div class="main-icon-img">
@@ -806,23 +810,23 @@
                 </div>
             </div>
 
-            <!-- Center: Divider -->
+
             <div class="divider"></div>
 
-            <!-- Right: User Name -->
+
             <div class="right-side">
                 <div class="windows-text">Веневцев Артём</div>
             </div>
         </div>
 
-        <!-- Scroll Option -->
+
         <div class="scroll-down-option">
             <div class="scroll-down-text">прокрутите вниз</div>
             <img src="../assets/oxygen-icon-down.png" alt="Scroll Down Icon" class="scroll-down-icon">
         </div>
     </div>
 
-    <!-- Bottom Bar (Long Fade) -->
+
     <div class="bar bottom"></div>
 </div>
 
@@ -856,9 +860,8 @@
 
         <div class="window-body">
 
-            <!-- Header: Photo + Description -->
             <div class="readme-header">
-                <div class="photo-placeholder">[ФОТО]</div>
+                <img class="photo-placeholder" src="../assets/myface.jpg" alt="[ФОТО]">
 
                 <div class="header-info">
                     <h2>Привет! Я студент<br>группы ЭФБО-06-24</h2>
@@ -867,19 +870,19 @@
                 </div>
             </div>
 
-            <!-- Meta Info -->
+
             <div class="file-meta">
                 <span id="MainDateMeta">Дата: 24 ноября.</span>
                 <span id="MainYearMeta">Год: 2025</span>
             </div>
 
-            <!-- Skills Fieldset -->
+
             <fieldset>
                 <legend>Мои навыки</legend>
 
                 <div class="skill-row">
                     <div class="skill-name">HTML/CSS</div>
-                    <!-- XP.css automatically styles <progress> tags! -->
+
                     <progress max="100" value="90" class="xp-progress-bar"></progress>
                     <span>90%</span>
                 </div>
@@ -903,7 +906,7 @@
                 </div>
             </fieldset>
 
-            <!-- Projects Fieldset -->
+
             <fieldset>
                 <legend>Лучшие проекты</legend>
                 <div class="projects-grid">
@@ -913,7 +916,7 @@
                 </div>
             </fieldset>
 
-            <!-- Footer -->
+
             <div class="xp-footer-text">© 2025 Контакты</div>
 
         </div>
@@ -933,22 +936,23 @@
         </div>
 
         <div class="window-body">
-            <!-- Меню фильтров -->
-            <menu role="tablist" id="project-filters">
+
+            <menu role="tablist" id="project-filters" class="xp-tablist">
                 <button aria-selected="true" onclick="filterProjects('all', this)">Все</button>
                 <button onclick="filterProjects('html', this)">HTML</button>
                 <button onclick="filterProjects('js', this)">JS</button>
                 <button onclick="filterProjects('react', this)">React</button>
+                <button onclick="filterProjects('c#', this)">C#</button>
             </menu>
 
             <article role="tabpanel">
 
-                <!-- Единый контейнер для проектов -->
+
                 <div class="projects-grid-large" id="projects-container">
-                    <!-- Сюда JS будет вставлять карточки -->
+
                 </div>
 
-                <!-- Пагинация (пока статичная) -->
+
                 <div class="pagination-info" id="projects-count">Загрузка...</div>
 
 
@@ -976,10 +980,10 @@
 
         <div class="window-body">
 
-            <!-- Заголовок страницы -->
+
             <h2 class="diary-header-title">Мой учебный прогресс</h2>
 
-            <!-- Блок с записями (Log Box) -->
+
             <div class="diary-log-box">
                 <div class="diary-row">
                     <span>15 дек - Верстка макета сайта</span>
@@ -999,27 +1003,27 @@
                 </div>
             </div>
 
-            <!-- Секция курсов -->
+
             <fieldset>
 
                 <div class="diary-section-title">Текущие курсы</div>
 
-                <!-- Курс 1 -->
+
                 <div class="skill-row">
                     <div class="skill-name" style="width: 120px;">Веб-разработка</div>
-                    <!-- Используем стандартный XP прогресс-бар -->
+
                     <progress max="100" value="90" class="xp-progress-bar"></progress>
                     <span style="width: 40px; text-align: right;">90%</span>
                 </div>
 
-                <!-- Курс 2 -->
+
                 <div class="skill-row">
                     <div class="skill-name" style="width: 120px;">JavaScript</div>
                     <progress max="100" value="70" class="xp-progress-bar"></progress>
                     <span style="width: 40px; text-align: right;">70%</span>
                 </div>
 
-                <!-- Курс 3 -->
+
                 <div class="skill-row">
                     <div class="skill-name" style="width: 120px;">React</div>
                     <progress max="100" value="50" class="xp-progress-bar"></progress>
@@ -1029,12 +1033,12 @@
             </fieldset>
 
 
-            <!-- Ссылка "Добавить запись" -->
+
             <div class="action-bar">
                 <button onclick="openModal('diary-modal')">+ Новая запись</button>
             </div>
 
-            <!-- Футер -->
+
             <div class="xp-footer-text" style="margin-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 5px;">
                 © 2025 Контакты
             </div>
@@ -1058,7 +1062,7 @@
 
             <h2 class="diary-header-title">Связаться со мной</h2>
 
-            <!-- Форма (Terminal Style + XP Quality) -->
+
             <div class="terminal-form-container">
 
                 <fieldset>
@@ -1092,7 +1096,6 @@
                         <button style="min-width: 100px;" onclick="sendContactForm()">Отправить</button>
                         <button style="min-width: 80px;" onclick="resetContactForm()">Сброс</button>
                     </div>
-                    <!-- Добавьте блок для вывода сообщения об успехе/ошибке -->
                     <div id="contact-msg" style="text-align: center; margin-top: 10px; font-weight: bold;"></div>
 
 
@@ -1126,7 +1129,6 @@
                 </div>
             </fieldset>
 
-            <!-- Статус бар внизу окна -->
             <div class="xp-footer-text" style="margin-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 5px;">
                 © 2025 Контакты
             </div>
@@ -1146,7 +1148,7 @@
         </div>
         <div class="window-body">
             <div style="text-align: center; margin-bottom: 10px;">
-                <!-- Заглушка фото -->
+                <!-- фото заглуш -->
                 <div id="modal-project-img" style="width: 100%; height: 150px; background: #eee; border: 1px inset; display: flex; align-items: center; justify-content: center;">
                     Нет изображения
                 </div>
@@ -1250,33 +1252,40 @@
             title: "Личный сайт",
             category: "html",
             stack: "HTML, CSS",
-            desc: "Сайт-портфолио в стиле Windows XP."
+            desc: "Сайт-портфолио в стиле Windows XP.",
+            img: "../assets/website.png"
         },
         {
-            title: "Todo-приложение",
-            category: "js",
-            stack: "JavaScript",
-            desc: "Список задач с сохранением в LocalStorage."
+            title: "Заметки",
+            category: "c#",
+            stack: "Xamarin",
+            desc: "Список задач с сохранением в LocalStorage.",
+            img: "../assets/xamarinnotes.png"
+
         },
         {
             title: "Интернет-магазин",
             category: "react",
             stack: "React, Redux",
-            desc: "Полноценный магазин с корзиной товаров."
+            desc: "Полноценный магазин с корзиной товаров.",
+            img: "../assets/sellsite.png"
         },
         {
             title: "Портфолио",
             category: "html",
             stack: "Bootstrap",
-            desc: "Лендинг на библиотеке Bootstrap."
+            desc: "Лендинг на библиотеке Bootstrap.",
+            img: "../assets/portfolio.png"
         },
         {
             title: "Калькулятор",
             category: "js",
             stack: "JavaScript",
-            desc: "Инженерный калькулятор."
+            desc: "Инженерный калькулятор.",
+            img: "../assets/calculator.png"
         }
     ];
+
 
 
     function filterProjects(category, btnElement) {
@@ -1301,16 +1310,18 @@
 
 
         filtered.forEach(project => {
-
             const card = document.createElement('div');
             card.className = 'project-card-large';
 
+
             card.onclick = function() {
-                openProjectInfo(project.title, project.desc, project.stack, '');
+                openProjectInfo(project.title, project.desc, project.stack, project.img);
             };
 
-
             card.innerHTML = `
+                <div style="width: 100%; height: 120px; background: #f0f0f0; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #ccc;">
+                    <img src="${project.img}" alt="${project.title}" style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                </div>
                 <div class="project-name">${project.title}</div>
                 <div class="project-stack">${project.stack}</div>
             `;
@@ -1318,9 +1329,9 @@
             container.appendChild(card);
         });
 
-
         countLabel.innerText = `Показано: ${filtered.length}`;
     }
+
 
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -1330,11 +1341,11 @@
 
     /* --- 1. ЛОГИКА ГЛАВНОЙ (РЕЗЮМЕ) --- */
     function openResume() {
-        // Открывает файл в новой вкладке
+
         window.open('../assets/resume.pdf', '_blank');
     }
 
-    /* --- 2. ЛОГИКА МОДАЛЬНЫХ ОКОН (ОБЩАЯ) --- */
+
     function openModal(modalId) {
         document.getElementById(modalId).classList.add('open');
     }
@@ -1343,20 +1354,32 @@
         document.getElementById(modalId).classList.remove('open');
     }
 
-    /* --- 3. ЛОГИКА ПРОЕКТОВ (POPUP) --- */
+
+
     function openProjectInfo(title, desc, tech, imgSrc) {
-        // Заполняем данные в модальном окне
         document.getElementById('modal-project-title').innerText = title;
         document.getElementById('modal-project-desc').innerText = desc;
         document.getElementById('modal-project-tech').innerText = tech;
 
-        // Если бы была картинка, мы бы меняли src
-        // document.getElementById('modal-project-img-tag').src = imgSrc;
+
+        const imgContainer = document.getElementById('modal-project-img');
+
+        imgContainer.innerHTML = '';
+
+
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.style.maxWidth = '100%';
+        img.style.maxHeight = '100%';
+        img.style.objectFit = 'contain';
+
+        imgContainer.appendChild(img);
 
         openModal('project-modal');
     }
 
-    /* --- 4. ЛОГИКА ДНЕВНИКА (ДОБАВЛЕНИЕ) --- */
+
+
     function saveDiaryEntry() {
         const dateVal = document.getElementById('diary-date').value;
         const textVal = document.getElementById('diary-text').value;
@@ -1367,13 +1390,13 @@
             return;
         }
 
-        // Форматируем дату (ГГГГ-ММ-ДД -> ДД.ММ.ГГГГ)
+
         const dateObj = new Date(dateVal);
         const formattedDate = dateObj.toLocaleDateString('ru-RU', {
             day: '2-digit', month: '2-digit'
-        }); // Получаем только ДД.ММ, как в примере, или можно добавить год
+        });
 
-        // Определение стиля статуса
+
         let statusHtml = '';
         if (statusVal === 'done') {
             statusHtml = '<span class="status-done">✓</span>';
@@ -1383,7 +1406,7 @@
             statusHtml = '<span class="status-planned">planned</span>';
         }
 
-        // Создаем HTML новой строки
+
         const newRow = document.createElement('div');
         newRow.className = 'diary-row';
         newRow.innerHTML = `
@@ -1391,18 +1414,18 @@
             ${statusHtml}
         `;
 
-        // Добавляем в начало списка (после последнего существующего элемента или в контейнер)
+
         const logBox = document.querySelector('.diary-log-box');
-        // Вставляем в начало списка (сразу после открывающего тега, перед первой записью)
+
         logBox.insertBefore(newRow, logBox.firstChild);
 
-        // Очищаем поля и закрываем окно
+
         document.getElementById('diary-date').value = '';
         document.getElementById('diary-text').value = '';
         closeModal('diary-modal');
     }
 
-    /* --- 5. ЛОГИКА КОНТАКТОВ (ВАЛИДАЦИЯ) --- */
+
     function resetContactForm() {
         document.getElementById('contact-name').value = '';
         document.getElementById('contact-email').value = '';
@@ -1415,16 +1438,13 @@
         const email = document.getElementById('contact-email').value.trim();
         const msgBlock = document.getElementById('contact-msg');
 
-        // Сброс сообщений
+
         msgBlock.style.color = 'black';
         msgBlock.innerText = '';
 
-        // Валидация
+
         if (!name) {
             alert("Ошибка: Поле 'Имя' не заполнено!");
-            // Или можно вывести в блок:
-            // msgBlock.style.color = 'red';
-            // msgBlock.innerText = "Ошибка: Заполните имя";
             return;
         }
         if (!email) {
@@ -1440,8 +1460,6 @@
         msgBlock.style.color = 'green';
         msgBlock.innerText = 'Сообщение успешно отправлено!';
 
-        // Можно очистить форму после успешной отправки
-        // resetContactForm();
     }
 
 
